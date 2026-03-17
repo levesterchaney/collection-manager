@@ -24,21 +24,17 @@ A full-stack application for managing personal collections of any type — actio
    cp .env.example .env
 ```
 
-2. Fill in your OAuth credentials in `.env`. You'll need:
-   - [Google OAuth App](https://console.cloud.google.com/) — set redirect URI to `http://localhost:5173/auth/callback/google`
-   - [GitHub OAuth App](https://github.com/settings/developers) — set callback URL to `http://localhost:5173/auth/callback/github`
-
-3. Start all services:
+2. Start all services:
 ```bash
    docker compose up --build
 ```
 
-4. In a separate terminal, create a superuser:
+3. In a separate terminal, create a superuser:
 ```bash
    docker compose exec backend python manage.py createsuperuser --settings=collection_manager.settings.development
 ```
 
-5. Access the app:
+4. Access the app:
    - Frontend: http://localhost:5173
    - Backend API: http://localhost:8000/api/
    - Django Admin: http://localhost:8000/admin/
