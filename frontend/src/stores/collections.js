@@ -56,6 +56,7 @@ export const useCollectionsStore = defineStore('collections', () => {
   }
 
   async function createItem(collectionId, data) {
+    data.append("collection", collectionId)
     const response = await itemsApi.create(collectionId, data)
     if (currentCollection.value?.id === collectionId) {
       currentCollection.value.items = [response.data, ...(currentCollection.value.items || [])]

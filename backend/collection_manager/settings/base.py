@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_q',
 
     # Third-party
     'rest_framework',
@@ -69,6 +70,19 @@ DATABASES = {
         'HOST': env('DB_HOST', default='localhost'),
         'PORT': env('DB_PORT', default='5432'),
     }
+}
+
+ANTHROPIC_API_KEY = env('ANTHROPIC_API_KEY', default='')
+
+Q_CLUSTER = {
+    'name': 'collection_manager',
+    'workers': 2,
+    'recycle': 500,
+    'timeout': 60,
+    'retry': 120,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default',  # uses Postgres — no Redis needed
 }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'

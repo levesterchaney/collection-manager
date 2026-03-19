@@ -2,7 +2,7 @@
   <nav class="border-b border-neutral-800 bg-neutral-900/80 backdrop-blur-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 flex items-center justify-between h-16">
       <RouterLink to="/" class="text-xl font-bold tracking-tight text-white">
-        Manifest
+        Collection Manager
       </RouterLink>
       <div class="flex items-center gap-4">
         <span class="text-sm text-neutral-400">{{ auth.user?.username }}</span>

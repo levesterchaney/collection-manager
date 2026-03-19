@@ -17,6 +17,22 @@ services:
       timeout: 5s
       retries: 5
 
+  qcluster:
+    build: ./backend
+    command: >
+      sh -c "cd /app &&
+             python manage.py qcluster --settings=collection_manager.settings.development"
+    working_dir: /app
+    environment:
+      - DJANGO_SETTINGS_MODULE=collection_manager.settings.development
+      - PYTHONPATH=/app
+    env_file: .env
+    volumes:
+      - ./backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+
   backend:
     build: ./backend
     command: >

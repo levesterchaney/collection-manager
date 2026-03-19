@@ -6,7 +6,7 @@ ENV PYTHONPATH=/app
 
 WORKDIR /app
 
-RUN apk add --no-cache postgresql-dev gcc musl-dev
+RUN apk add --no-cache postgresql-dev gcc musl-dev libffi-dev openssl-dev cargo jpeg-dev zlib-dev
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

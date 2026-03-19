@@ -2,32 +2,11 @@
   <div class="min-h-screen flex items-center justify-center bg-neutral-950">
     <div class="w-full max-w-md px-6">
       <div class="text-center mb-10">
-        <h1 class="text-4xl font-bold text-white tracking-tight">Manifest</h1>
+        <h1 class="text-4xl font-bold text-white tracking-tight">Collection Manager</h1>
         <p class="text-neutral-400 mt-2">Your collections, catalogued.</p>
       </div>
 
       <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
-        <!-- Tab toggle -->
-        <div class="flex rounded-xl bg-neutral-800 p-1 mb-6">
-          <button
-            @click="mode = 'login'"
-            class="flex-1 py-2 text-sm font-medium rounded-lg transition-colors"
-            :class="mode === 'login'
-              ? 'bg-neutral-700 text-white'
-              : 'text-neutral-400 hover:text-white'"
-          >
-            Sign in
-          </button>
-          <button
-            @click="mode = 'register'"
-            class="flex-1 py-2 text-sm font-medium rounded-lg transition-colors"
-            :class="mode === 'register'
-              ? 'bg-neutral-700 text-white'
-              : 'text-neutral-400 hover:text-white'"
-          >
-            Create account
-          </button>
-        </div>
 
         <form @submit.prevent="submit" class="space-y-4">
           <div>
@@ -86,6 +65,30 @@
             {{ submitting ? 'Please wait...' : (mode === 'login' ? 'Sign in' : 'Create account') }}
           </button>
         </form>
+
+        <!-- Tab toggle -->
+        <div class="flex rounded-xl bg-neutral-800 p-1 mb-6">
+          <button
+            @click="mode = 'login'"
+            class="flex-1 py-2 text-sm font-medium rounded-lg transition-colors"
+            :class="mode === 'login'
+              ? 'bg-neutral-700 text-white'
+              : 'text-neutral-400 hover:text-white'"
+          >
+            Sign in
+          </button>
+          <button
+            @click="mode = 'register'"
+            class="flex-1 py-2 text-sm font-medium rounded-lg transition-colors"
+            :class="mode === 'register'
+              ? 'bg-neutral-700 text-white'
+              : 'text-neutral-400 hover:text-white'"
+          >
+            Create account
+          </button>
+        </div>
+
+
       </div>
     </div>
   </div>
